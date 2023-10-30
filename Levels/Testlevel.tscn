@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cngm46nqj67hg"]
+[gd_scene load_steps=6 format=3 uid="uid://cngm46nqj67hg"]
 
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_jke2r"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="2_gv1kx"]
+[ext_resource type="PackedScene" uid="uid://bnh1oe1jg27xn" path="res://Actors/Sword.tscn" id="3_x3bts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_jke2r")
@@ -771,3 +772,6 @@ layer_0/tile_data = PackedInt32Array(-38, 0, 0, -37, 65536, 0, -36, 131072, 0, -
 
 [node name="Character" parent="." instance=ExtResource("2_gv1kx")]
 position = Vector2(-34, -60)
+
+[node name="Sword" parent="." instance=ExtResource("3_x3bts")]
+position = Vector2(55, -33)

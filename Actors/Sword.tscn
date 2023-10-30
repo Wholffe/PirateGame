@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://bnh1oe1jg27xn"]
+
+[ext_resource type="Script" path="res://Scripts/Sword.gd" id="1_4nseq"]
+[ext_resource type="Texture2D" uid="uid://8r7vg0crvcvc" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 01.png" id="1_twuf1"]
+[ext_resource type="Texture2D" uid="uid://cn31p4fjoiatg" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 02.png" id="2_oxlj1"]
+[ext_resource type="Texture2D" uid="uid://bkbncrhrt7tm7" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 03.png" id="3_u5w5b"]
+[ext_resource type="Texture2D" uid="uid://chdkr7jqolelk" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 04.png" id="4_lb1sn"]
+[ext_resource type="Texture2D" uid="uid://c7ke78grsqd5h" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 05.png" id="5_qbifw"]
+[ext_resource type="Texture2D" uid="uid://br4431tp122l1" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 06.png" id="6_in2wm"]
+[ext_resource type="Texture2D" uid="uid://bq0g06dhelwhe" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 07.png" id="7_qs1hq"]
+[ext_resource type="Texture2D" uid="uid://w88dn2irl8me" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 08.png" id="8_7qxyq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_awibt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_twuf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oxlj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u5w5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lb1sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qbifw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_in2wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qs1hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7qxyq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4ndm"]
+size = Vector2(20, 11)
+
+[node name="Sword" type="Node2D"]
+script = ExtResource("1_4nseq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_awibt")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.814462
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p4ndm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
