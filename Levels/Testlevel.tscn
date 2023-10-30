@@ -773,9 +773,16 @@ layer_0/tile_data = PackedInt32Array(-38, 0, 0, -37, 65536, 0, -36, 131072, 0, -
 
 [node name="Barrel" parent="." instance=ExtResource("4_hu26x")]
 position = Vector2(151, -28)
+hp = 3
 
 [node name="Character" parent="." instance=ExtResource("2_gv1kx")]
 position = Vector2(-34, -60)
 
 [node name="Sword" parent="." instance=ExtResource("3_x3bts")]
 position = Vector2(55, -33)
+
+[node name="Barrel2" parent="." instance=ExtResource("4_hu26x")]
+position = Vector2(226, -28)
+
+[node name="Barrel3" parent="." instance=ExtResource("4_hu26x")]
+position = Vector2(252, -28)
