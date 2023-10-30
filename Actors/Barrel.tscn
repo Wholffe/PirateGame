@@ -1,20 +1,80 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn23d2yrlu0lv"]
+[gd_scene load_steps=14 format=3 uid="uid://cn23d2yrlu0lv"]
 
-[ext_resource type="Texture2D" uid="uid://ca0fjab6v34n7" path="res://Assets/Pirate Ship/Sprites/Decorations/Barrels and Bottles/01.png" id="1_cg6yu"]
 [ext_resource type="Script" path="res://Scripts/Barrel.gd" id="2_tl7qy"]
+[ext_resource type="Texture2D" uid="uid://cbc8lue4swoj4" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/1.png" id="2_xex3c"]
+[ext_resource type="Texture2D" uid="uid://chxu7764jsj4q" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/2.png" id="3_dw8lk"]
+[ext_resource type="Texture2D" uid="uid://bmq5da7xyrqud" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/3.png" id="4_e2mke"]
+[ext_resource type="Texture2D" uid="uid://l02cbtvysv8c" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/4.png" id="5_umcym"]
+[ext_resource type="Texture2D" uid="uid://csqejd2xyo3kh" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/5.png" id="6_g7l07"]
+[ext_resource type="Texture2D" uid="uid://c6u316m4gyggb" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/1.png" id="7_bh42k"]
+[ext_resource type="Texture2D" uid="uid://cfxp3kgk7je4k" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/2.png" id="8_te402"]
+[ext_resource type="Texture2D" uid="uid://d702ruedcth3" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/3.png" id="9_v0gna"]
+[ext_resource type="Texture2D" uid="uid://cvab6ne7trp5a" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/4.png" id="10_u1jyj"]
+[ext_resource type="Texture2D" uid="uid://dnmqkhmsamt40" path="res://Assets/Merchant Ship/Sprites/Barrel/Idle/1.png" id="11_lqo08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejrwn"]
+size = Vector2(22, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysb6r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xex3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dw8lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e2mke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_umcym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g7l07")
+}],
+"loop": false,
+"name": &"destroyed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bh42k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_te402")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_v0gna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u1jyj")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_lqo08")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Barrel" type="Node2D"]
-
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -5)
-texture = ExtResource("1_cg6yu")
-
-[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_tl7qy")
 
+[node name="Area2D" type="Area2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_ejrwn")
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ysb6r")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
