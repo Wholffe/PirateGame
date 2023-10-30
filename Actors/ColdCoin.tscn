@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://crcmvce2188w2"]
+
+[ext_resource type="Texture2D" uid="uid://bwngmrxbyhncf" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_tkgvt"]
+[ext_resource type="Script" path="res://Scripts/ColdCoin.gd" id="1_xmskt"]
+[ext_resource type="Texture2D" uid="uid://bikaocofy5elp" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/02.png" id="2_gld2a"]
+[ext_resource type="Texture2D" uid="uid://c6mfi15wgdpps" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/03.png" id="3_l6bqn"]
+[ext_resource type="Texture2D" uid="uid://b8ihwgiiy68ft" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/04.png" id="4_gtbxm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_solcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tkgvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gld2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l6bqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gtbxm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxpwt"]
+
+[node name="ColdCoin" type="Node2D"]
+script = ExtResource("1_xmskt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_solcg")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.754964
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gxpwt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

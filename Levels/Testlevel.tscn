@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cngm46nqj67hg"]
+[gd_scene load_steps=9 format=3 uid="uid://cngm46nqj67hg"]
 
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_jke2r"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="2_gv1kx"]
 [ext_resource type="PackedScene" uid="uid://bnh1oe1jg27xn" path="res://Actors/Sword.tscn" id="3_x3bts"]
 [ext_resource type="PackedScene" uid="uid://cn23d2yrlu0lv" path="res://Actors/Barrel.tscn" id="4_hu26x"]
+[ext_resource type="PackedScene" uid="uid://dcwj3kp088jm8" path="res://Actors/RedDiamond.tscn" id="5_8m7bg"]
+[ext_resource type="PackedScene" uid="uid://crcmvce2188w2" path="res://Actors/ColdCoin.tscn" id="6_vl38q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_jke2r")
@@ -786,3 +788,9 @@ position = Vector2(226, -28)
 
 [node name="Barrel3" parent="." instance=ExtResource("4_hu26x")]
 position = Vector2(252, -28)
+
+[node name="RedDiamond" parent="." instance=ExtResource("5_8m7bg")]
+position = Vector2(-170, -30)
+
+[node name="ColdCoin" parent="." instance=ExtResource("6_vl38q")]
+position = Vector2(-223, -30)
