@@ -18,7 +18,14 @@ func checkAttack():
 	if Input.is_action_just_pressed("ui_attack"):
 		isAttacking = true
 		$AttackArea/CollisionShape2D.disabled = false
-		animSprite.play("attack1")
+		
+		randomize()
+		var randomAttack = randi_range(1,3)
+		match(randomAttack):
+			1: animSprite.play("attack1")
+			2: animSprite.play("attack2")
+			3: animSprite.play("attack3")
+			
 		if(animSprite.flip_h):
 			$AttackArea/CollisionShape2D.position.x *= -1
 			toggleAttack = true
