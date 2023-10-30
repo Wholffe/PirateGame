@@ -35,7 +35,7 @@ script = ExtResource("1_xmskt")
 sprite_frames = SubResource("SpriteFrames_solcg")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.754964
+frame_progress = 0.695007
 
 [node name="Area2D" type="Area2D" parent="."]
 
