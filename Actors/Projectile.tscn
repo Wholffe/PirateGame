@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://db2o8g6j0eblo"]
+[gd_scene load_steps=16 format=3 uid="uid://db2o8g6j0eblo"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_2tjj6"]
 [ext_resource type="Texture2D" uid="uid://dv7bnhblexkpr" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="2_h5ka4"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://u2cryssd8fw8" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/6.png" id="7_s4rtb"]
 [ext_resource type="Texture2D" uid="uid://cn28unbfknhe1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/7.png" id="8_xonii"]
 [ext_resource type="Texture2D" uid="uid://wqljf8k3bxco" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Idle/1.png" id="9_ouf22"]
+[ext_resource type="Texture2D" uid="uid://opc83kwe46fp" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/1.png" id="9_sa7su"]
+[ext_resource type="Texture2D" uid="uid://chesclwy8vjhl" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/2.png" id="10_iayo7"]
+[ext_resource type="Texture2D" uid="uid://dgo8sbkcevnhk" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/3.png" id="11_rdpif"]
+[ext_resource type="Texture2D" uid="uid://dij7tkbbtx5xp" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="13_5o4sh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hde5d"]
 animations = [{
@@ -40,10 +44,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_sa7su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iayo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rdpif")
+}],
+"loop": true,
+"name": &"explosion_wood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("9_ouf22")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_5o4sh")
+}],
+"loop": true,
+"name": &"idle_wood",
 "speed": 5.0
 }]
 

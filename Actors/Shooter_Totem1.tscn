@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://d22j444pt1nbr"]
+
+[ext_resource type="PackedScene" uid="uid://by26g6kqdgxy" path="res://Actors/Shooter.tscn" id="1_xmfju"]
+[ext_resource type="Texture2D" uid="uid://7chaddjl1kjv" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/1.png" id="2_tt128"]
+[ext_resource type="Texture2D" uid="uid://c05cttuhl60rl" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/2.png" id="3_d2tg5"]
+[ext_resource type="Texture2D" uid="uid://eaov7btnvxnc" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/3.png" id="4_t34q0"]
+[ext_resource type="Texture2D" uid="uid://dqgjpn2e7yuxr" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/4.png" id="5_rp6b3"]
+[ext_resource type="Texture2D" uid="uid://d31wqwyb0goi7" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/5.png" id="6_7fo3g"]
+[ext_resource type="Texture2D" uid="uid://b3jjm0pro01r2" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/6.png" id="7_o7ya1"]
+[ext_resource type="Texture2D" uid="uid://c3e4luoqdo4iy" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Idle 1/1.png" id="8_so0uq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmpsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tt128")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d2tg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t34q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rp6b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7fo3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o7ya1")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_so0uq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Totem1" instance=ExtResource("1_xmfju")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_rmpsn")
+animation = &"fire"
+autoplay = "idle"

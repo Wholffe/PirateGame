@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cngm46nqj67hg"]
+[gd_scene load_steps=13 format=3 uid="uid://cngm46nqj67hg"]
 
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_jke2r"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="2_gv1kx"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cn23d2yrlu0lv" path="res://Actors/Barrel.tscn" id="4_hu26x"]
 [ext_resource type="PackedScene" uid="uid://dcwj3kp088jm8" path="res://Actors/RedDiamond.tscn" id="5_8m7bg"]
 [ext_resource type="PackedScene" uid="uid://crcmvce2188w2" path="res://Actors/ColdCoin.tscn" id="6_vl38q"]
-[ext_resource type="PackedScene" uid="uid://by26g6kqdgxy" path="res://Actors/Shooter.tscn" id="7_jlgv7"]
+[ext_resource type="PackedScene" uid="uid://ceajkjnljaw3c" path="res://Actors/Shooter_Cannon.tscn" id="7_lh3n1"]
+[ext_resource type="PackedScene" uid="uid://d22j444pt1nbr" path="res://Actors/Shooter_Totem1.tscn" id="8_vo7xm"]
+[ext_resource type="PackedScene" uid="uid://bahewtvkf4cg0" path="res://Actors/Shooter_Totem2.tscn" id="9_im0tt"]
+[ext_resource type="PackedScene" uid="uid://bp6r6k5sqfyjq" path="res://Actors/Shooter_Totem3.tscn" id="10_jjw04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_jke2r")
@@ -790,14 +793,24 @@ position = Vector2(-287, -30)
 [node name="ColdCoin" parent="." instance=ExtResource("6_vl38q")]
 position = Vector2(-223, -30)
 
-[node name="Shooter" parent="." instance=ExtResource("7_jlgv7")]
-position = Vector2(168, -28)
+[node name="Shooter_Cannon" parent="." instance=ExtResource("7_lh3n1")]
+position = Vector2(318, -28)
+lookLeft = false
 damageValue = 5
-pSpeed = 1
 range = 150
 
-[node name="Shooter2" parent="." instance=ExtResource("7_jlgv7")]
-position = Vector2(200, -28)
-maxWaitTime = 3
-lookLeft = false
-pSpeed = 5
+[node name="Shooter_Totem1" parent="." instance=ExtResource("8_vo7xm")]
+position = Vector2(211, -23)
+projectileType = 1
+showFireEffect = false
+
+[node name="Shooter_Totem2" parent="." instance=ExtResource("9_im0tt")]
+position = Vector2(207, -59)
+pSpeed = 3
+projectileType = 1
+
+[node name="Shooter_Totem3" parent="." instance=ExtResource("10_jjw04")]
+position = Vector2(204, -81)
+pSpeed = 10
+range = 200
+projectileType = 1

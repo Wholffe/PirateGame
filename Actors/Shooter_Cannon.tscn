@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://ceajkjnljaw3c"]
+
+[ext_resource type="PackedScene" uid="uid://by26g6kqdgxy" path="res://Actors/Shooter.tscn" id="1_kjg47"]
+[ext_resource type="Texture2D" uid="uid://d1ufo55rcd30r" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/1.png" id="2_okb17"]
+[ext_resource type="Texture2D" uid="uid://drrnwj3228pef" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/2.png" id="3_v574c"]
+[ext_resource type="Texture2D" uid="uid://dw8fkabtnd8rn" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/3.png" id="4_0pl6f"]
+[ext_resource type="Texture2D" uid="uid://b0pmaka7h7mmv" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/4.png" id="5_aavr8"]
+[ext_resource type="Texture2D" uid="uid://d0y0diys2yeyv" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/5.png" id="6_5j7yp"]
+[ext_resource type="Texture2D" uid="uid://dn7388c502rsh" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/6.png" id="7_h86w2"]
+[ext_resource type="Texture2D" uid="uid://t5p63rtpaoqn" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Idle/1.png" id="8_lvx0j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmpsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_okb17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v574c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0pl6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aavr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5j7yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h86w2")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lvx0j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Cannon" instance=ExtResource("1_kjg47")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_rmpsn")
+animation = &"idle"
+autoplay = "idle"

@@ -3,6 +3,8 @@ extends Node
 var redDiamonds = 0
 var goldCoins = 0
 
+enum projectileTypes {CANNON, TOTEM}
+
 func playerDamage(value):
 	print("player hit: " + str(value))
 	

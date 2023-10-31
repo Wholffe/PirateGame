@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bahewtvkf4cg0"]
+
+[ext_resource type="PackedScene" uid="uid://by26g6kqdgxy" path="res://Actors/Shooter.tscn" id="1_si68a"]
+[ext_resource type="Texture2D" uid="uid://5lkg17fwv53d" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/1.png" id="2_r32yr"]
+[ext_resource type="Texture2D" uid="uid://uo33qgn0eltt" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/2.png" id="3_f5umh"]
+[ext_resource type="Texture2D" uid="uid://b76cn8dj1dxe" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/3.png" id="4_jqn23"]
+[ext_resource type="Texture2D" uid="uid://dot186m5dw8jy" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/4.png" id="5_ct1yk"]
+[ext_resource type="Texture2D" uid="uid://cv3g0f30afwcb" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/5.png" id="6_fdsgw"]
+[ext_resource type="Texture2D" uid="uid://ce5a6pgeakr6n" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/6.png" id="7_1wvt1"]
+[ext_resource type="Texture2D" uid="uid://bw275ouqbobnk" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Idle 2/1.png" id="8_m4nes"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmpsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r32yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f5umh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jqn23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ct1yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fdsgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1wvt1")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_m4nes")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Totem1" instance=ExtResource("1_si68a")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_rmpsn")
+animation = &"fire"
+autoplay = "idle"
+frame = 5
+frame_progress = 1.0
