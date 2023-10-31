@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cngm46nqj67hg"]
+[gd_scene load_steps=10 format=3 uid="uid://cngm46nqj67hg"]
 
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_jke2r"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="2_gv1kx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cn23d2yrlu0lv" path="res://Actors/Barrel.tscn" id="4_hu26x"]
 [ext_resource type="PackedScene" uid="uid://dcwj3kp088jm8" path="res://Actors/RedDiamond.tscn" id="5_8m7bg"]
 [ext_resource type="PackedScene" uid="uid://crcmvce2188w2" path="res://Actors/ColdCoin.tscn" id="6_vl38q"]
+[ext_resource type="PackedScene" uid="uid://by26g6kqdgxy" path="res://Actors/Shooter.tscn" id="7_jlgv7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_jke2r")
@@ -774,7 +775,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-38, 0, 0, -37, 65536, 0, -36, 131072, 0, -35, 196608, 0, -34, 262144, 0, -33, 327680, 0, -32, 0, 0, -31, 65536, 0, -30, 131072, 0, -29, 524288, 9, -28, 589824, 9, -27, 327680, 0, -26, 0, 0, -25, 65536, 0, -24, 131072, 0, -23, 196608, 0, -22, 262144, 0, -21, 327680, 0, -20, 0, 0, -19, 65536, 0, -18, 0, 0, -17, 65536, 0, -16, 131072, 0, -15, 196608, 0, -65490, 262144, 0, -65489, 327680, 0, -65488, 131072, 0, -65487, 196608, 0, -65486, 262144, 0, -65485, 524288, 9, -14, 262144, 0, -13, 327680, 0, -12, 0, 0, -11, 65536, 0, -10, 131072, 0, -9, 196608, 0, -8, 262144, 0, -7, 327680, 0, -6, 0, 0, -5, 65536, 0, -4, 131072, 0, -3, 196608, 0, -2, 262144, 0, -1, 327680, 0, -65536, 0, 0, -65535, 65536, 0, -65534, 131072, 0, -65533, 196608, 0, -65532, 262144, 0, -65531, 327680, 0, -65530, 0, 0, -65529, 65536, 0, -65528, 131072, 0, -65527, 196608, 0, -65526, 262144, 0, -65525, 327680, 0, -65524, 0, 0, -65523, 65536, 0, -65522, 131072, 0, -65521, 196608, 0, -65520, 262144, 0, -65519, 327680, 0, -65518, 0, 0, -65517, 65536, 0, -65516, 131072, 0, -65515, 196608, 0, -65514, 262144, 0, -65513, 327680, 0, -65512, 0, 0, -65511, 65536, 0, -65510, 524288, 9, -65509, 589824, 9, -65508, 262144, 0, -65507, 327680, 0, -65506, 0, 0, -65505, 65536, 0, -65504, 131072, 0, -65503, 196608, 0, -65502, 262144, 0, -65501, 327680, 0, -65500, 0, 0, -65499, 65536, 0, -65498, 131072, 0, -65497, 196608, 0, -65496, 262144, 0, -65495, 327680, 0, -65494, 0, 0, -65493, 65536, 0, -65492, 131072, 0, -65491, 196608, 0, -131021, 524288, 8, -131020, 589824, 8, -65484, 589824, 9, -131046, 524288, 8, -131045, 589824, 8, -65565, 524288, 8, -65564, 589824, 8, -196639, 524288, 8, -131103, 524288, 9, -196638, 589824, 8, -131102, 589824, 9, -327713, 524288, 8, -262177, 524288, 9, -327712, 589824, 8, -262176, 589824, 9)
 
 [node name="Barrel" parent="." instance=ExtResource("4_hu26x")]
-position = Vector2(151, -28)
+position = Vector2(279, -28)
 hp = 1
 
 [node name="Character" parent="." instance=ExtResource("2_gv1kx")]
@@ -783,22 +784,16 @@ position = Vector2(-34, -60)
 [node name="Sword" parent="." instance=ExtResource("3_x3bts")]
 position = Vector2(55, -33)
 
-[node name="Barrel2" parent="." instance=ExtResource("4_hu26x")]
-position = Vector2(226, -28)
-hp = 1
-
-[node name="Barrel3" parent="." instance=ExtResource("4_hu26x")]
-position = Vector2(252, -28)
-hp = 1
-
 [node name="RedDiamond" parent="." instance=ExtResource("5_8m7bg")]
-position = Vector2(-170, -30)
+position = Vector2(-287, -30)
 
 [node name="ColdCoin" parent="." instance=ExtResource("6_vl38q")]
 position = Vector2(-223, -30)
 
-[node name="ColdCoin2" parent="." instance=ExtResource("6_vl38q")]
-position = Vector2(-244, -30)
+[node name="Shooter" parent="." instance=ExtResource("7_jlgv7")]
+position = Vector2(-122, -28)
+lookLeft = false
 
-[node name="ColdCoin3" parent="." instance=ExtResource("6_vl38q")]
-position = Vector2(-265, -30)
+[node name="Shooter2" parent="." instance=ExtResource("7_jlgv7")]
+position = Vector2(160, -28)
+maxWaitTime = 3

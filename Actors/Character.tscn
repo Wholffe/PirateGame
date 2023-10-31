@@ -231,7 +231,7 @@ shape = SubResource("CapsuleShape2D_c1q2d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ssqs4")
-animation = &"idle_hs"
+animation = &"idle_nos"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
