@@ -4,6 +4,8 @@ extends Node2D
 @export var maxWaitTime = 5
 @export var lookLeft = true
 @export var damageValue = 1
+@export var pSpeed = 6
+@export var range = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +27,20 @@ func fire():
 	$AnimatedSprite2D.play("fire")
 	await  get_tree().create_timer(0.2).timeout
 	$FireEffect.play("fireeffect")
+	spawnProjectile()
 	await  get_tree().create_timer(0.3).timeout
 	$FireEffect.visible = false
 	$AnimatedSprite2D.play("idle")
+
+func spawnProjectile():
+	var p = preload("res://Actors/Projectile.tscn").instantiate()
+	
+	p.pSpeed = pSpeed
+	p.damage = damageValue
+	p.range = range
+	
+	if(lookLeft == false):
+		p.directionLeft = false
+		
+	p.position = self.position
+	get_parent().add_child(p)

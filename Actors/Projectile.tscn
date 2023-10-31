@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://db2o8g6j0eblo"]
+
+[ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_2tjj6"]
+[ext_resource type="Texture2D" uid="uid://dv7bnhblexkpr" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="2_h5ka4"]
+[ext_resource type="Texture2D" uid="uid://u4s52sotxc7q" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/2.png" id="3_yxe1c"]
+[ext_resource type="Texture2D" uid="uid://c4f6k0ketkjjr" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/3.png" id="4_41h1i"]
+[ext_resource type="Texture2D" uid="uid://dk0ca1u3qay4p" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/4.png" id="5_bhkga"]
+[ext_resource type="Texture2D" uid="uid://1gy1yjgdvyvu" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/5.png" id="6_igelc"]
+[ext_resource type="Texture2D" uid="uid://u2cryssd8fw8" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/6.png" id="7_s4rtb"]
+[ext_resource type="Texture2D" uid="uid://cn28unbfknhe1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/7.png" id="8_xonii"]
+[ext_resource type="Texture2D" uid="uid://wqljf8k3bxco" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Idle/1.png" id="9_ouf22"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hde5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h5ka4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yxe1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_41h1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bhkga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_igelc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s4rtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xonii")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ouf22")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7fms"]
+radius = 7.0
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_2tjj6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hde5d")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_w7fms")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

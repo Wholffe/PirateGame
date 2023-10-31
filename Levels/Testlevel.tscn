@@ -791,9 +791,13 @@ position = Vector2(-287, -30)
 position = Vector2(-223, -30)
 
 [node name="Shooter" parent="." instance=ExtResource("7_jlgv7")]
-position = Vector2(-122, -28)
-lookLeft = false
+position = Vector2(168, -28)
+damageValue = 5
+pSpeed = 1
+range = 150
 
 [node name="Shooter2" parent="." instance=ExtResource("7_jlgv7")]
-position = Vector2(160, -28)
+position = Vector2(200, -28)
 maxWaitTime = 3
+lookLeft = false
+pSpeed = 5
