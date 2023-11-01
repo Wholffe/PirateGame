@@ -25,6 +25,8 @@ func run():
 	$AnimatedSprite2D.play("run")
 	
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	if(!isDead):
 		if is_on_wall():
 			if(enemyDirection == -1):
@@ -37,6 +39,7 @@ func _physics_process(delta):
 		velocity.x = enemyDirection * enemySpeed
 		move_and_slide()
 
+#collision bug results in double dmg
 func attack():
 	if(!isDead):
 		enemyDirection = 0
