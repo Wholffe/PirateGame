@@ -1,13 +1,8 @@
 extends CharacterBody2D
 
-@export
-var enemySpeed = 150.0
-
-@export
-var enemyHP = 3
-
-@export
-var enemyDamage = 1
+@export var enemySpeed = 150.0
+@export var enemyHP = 3
+@export var enemyDamage = 1
 
 const JUMP_VELOCITY = -400.0
 
@@ -52,14 +47,17 @@ func attack():
 		else:
 			enemyDirection = 1
 
+func kill_enemy():
+	isDead = true
+	enemyDirection = 0
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("dead")
+	await get_tree().create_timer(10).timeout
+	queue_free()
+	
 func checkStatus():
 	if(enemyHP <= 0):
-		isDead = true
-		enemyDirection = 0
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.play("dead")
-		await get_tree().create_timer(10).timeout
-		queue_free()
+		kill_enemy()
 	else:
 		if(playerInDamageZone):
 			attack()

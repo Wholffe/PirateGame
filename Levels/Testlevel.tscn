@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cngm46nqj67hg"]
+[gd_scene load_steps=15 format=3 uid="uid://cngm46nqj67hg"]
 
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_jke2r"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="2_gv1kx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bahewtvkf4cg0" path="res://Actors/Shooter_Totem2.tscn" id="9_im0tt"]
 [ext_resource type="PackedScene" uid="uid://bp6r6k5sqfyjq" path="res://Actors/Shooter_Totem3.tscn" id="10_jjw04"]
 [ext_resource type="PackedScene" uid="uid://da8mfbxj6iq80" path="res://Actors/Enemy_Crabby.tscn" id="11_fin26"]
+[ext_resource type="PackedScene" uid="uid://d4ld1sipem38k" path="res://Actors/Enemy_PinkStar.tscn" id="12_cpd4l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_jke2r")
@@ -806,12 +807,12 @@ projectileType = 1
 showFireEffect = false
 
 [node name="Shooter_Totem2" parent="." instance=ExtResource("9_im0tt")]
-position = Vector2(207, -59)
+position = Vector2(207, -45)
 pSpeed = 3
 projectileType = 1
 
 [node name="Shooter_Totem3" parent="." instance=ExtResource("10_jjw04")]
-position = Vector2(204, -81)
+position = Vector2(204, -67)
 pSpeed = 10
 range = 200
 projectileType = 1
@@ -819,3 +820,9 @@ projectileType = 1
 [node name="Enemy_Crabby" parent="." instance=ExtResource("11_fin26")]
 position = Vector2(569, -28)
 enemySpeed = 200.0
+
+[node name="Enemy_PinkStar" parent="." instance=ExtResource("12_cpd4l")]
+position = Vector2(709, -27)
+enemySpeed = 75.0
+enemyHP = 2
+enemyDamage = 2

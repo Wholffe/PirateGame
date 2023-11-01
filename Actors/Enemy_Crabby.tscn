@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://da8mfbxj6iq80"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy_Crabby.gd" id="1_rc8tt"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_xx62w"]
 [ext_resource type="Texture2D" uid="uid://gbw48iv1i20y" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="2_2tfqq"]
 [ext_resource type="Texture2D" uid="uid://b1i8fnbix7pw4" path="res://Assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 01.png" id="2_c2o2a"]
 [ext_resource type="Texture2D" uid="uid://byy2xjltwlws1" path="res://Assets/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 01.png" id="2_nkj0t"]
@@ -117,7 +117,7 @@ size = Vector2(53, 14)
 
 [node name="Enemy_Crabby" type="CharacterBody2D"]
 collision_layer = 0
-script = ExtResource("1_rc8tt")
+script = ExtResource("1_xx62w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lh7n6")
