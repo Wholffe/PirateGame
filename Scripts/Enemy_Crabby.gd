@@ -39,15 +39,15 @@ func _physics_process(delta):
 		velocity.x = enemyDirection * enemySpeed
 		move_and_slide()
 
-#collision bug results in double dmg
 func attack():
 	if(!isDead):
 		enemyDirection = 0
-		await get_tree().create_timer(1).timeout
+		$AnimatedSprite2D.play("standing")
+		await get_tree().create_timer(0.5).timeout
 		if(playerInDamageZone and !isDead):
 			$AnimatedSprite2D.play("attack")
-			await get_tree().create_timer(0.2).timeout
 			Global.playerDamage(enemyDamage)
+			await get_tree().create_timer(0.2).timeout
 			enemyDirection = 1
 		else:
 			enemyDirection = 1
@@ -65,10 +65,6 @@ func checkStatus():
 			attack()
 		else:
 			run()
-
-func _on_animated_sprite_2d_animation_finished():
-	if(!isDead):
-		checkStatus()
 
 #HIT THE ENEMY
 func _on_area_2d_area_entered(area):

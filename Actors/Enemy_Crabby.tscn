@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://twtapdmmu3ef" path="res://Assets/The Crusty Crew/Sprites/Crabby/10-Dead Ground/Dead Ground 04.png" id="6_uuxr8"]
 [ext_resource type="Texture2D" uid="uid://c5rkgy64qs0us" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="7_pqwig"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lh7n6"]
+height = 26.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_njuxp"]
 animations = [{
 "frames": [{
@@ -38,7 +41,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -96,37 +99,40 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_pqwig")
 }],
-"loop": false,
+"loop": true,
 "name": &"run",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d0380")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 1.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lh7n6"]
-radius = 13.0
-height = 26.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeuel"]
-size = Vector2(56, 16)
+size = Vector2(53, 14)
 
 [node name="Enemy_Crabby" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_rc8tt")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lh7n6")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_njuxp")
 animation = &"attack"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_lh7n6")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 0)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_aeuel")
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

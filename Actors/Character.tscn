@@ -221,7 +221,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efbj4"]
-size = Vector2(23, 11)
+size = Vector2(22.5, 9)
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_uqn17")
@@ -231,7 +231,7 @@ shape = SubResource("CapsuleShape2D_c1q2d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ssqs4")
-animation = &"idle_nos"
+animation = &"attack1"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -239,7 +239,7 @@ position_smoothing_enabled = true
 [node name="AttackArea" type="Area2D" parent="." groups=["FromPlayer"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(20.5, 4.5)
+position = Vector2(20.25, 5.5)
 shape = SubResource("RectangleShape2D_efbj4")
 disabled = true
 
