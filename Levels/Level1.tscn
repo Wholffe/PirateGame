@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bryxw6cnjjkm4"]
+[gd_scene load_steps=9 format=3 uid="uid://bryxw6cnjjkm4"]
 
 [ext_resource type="Script" path="res://Scripts/DeadLevel.gd" id="1_jclrs"]
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_l5258"]
 [ext_resource type="PackedScene" uid="uid://dvb4ofm6dklvd" path="res://Actors/LevelTransition.tscn" id="3_nwhf5"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="4_yi0us"]
+[ext_resource type="PackedScene" uid="uid://ceajkjnljaw3c" path="res://Actors/Shooter_Cannon.tscn" id="5_d1q65"]
+[ext_resource type="PackedScene" uid="uid://bnh1oe1jg27xn" path="res://Actors/Sword.tscn" id="6_yv3qf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("2_l5258")
@@ -779,3 +781,9 @@ targetLevel = "Level2"
 
 [node name="Character" parent="." instance=ExtResource("4_yi0us")]
 position = Vector2(367, -100)
+
+[node name="Shooter_Cannon" parent="." instance=ExtResource("5_d1q65")]
+position = Vector2(978, -92)
+
+[node name="Sword" parent="." instance=ExtResource("6_yv3qf")]
+position = Vector2(505, -90)

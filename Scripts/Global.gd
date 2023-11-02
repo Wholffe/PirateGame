@@ -1,13 +1,18 @@
 extends Node
 
-var redDiamonds = 0
+var redDiamonds = 2
 var goldCoins = 0
 
 enum projectileTypes {CANNON, TOTEM}
-enum Level {StartMenu, DeadLevel, WinnerScreen, Level1, Level2}
+
+signal playerHit
 
 func playerDamage(value):
-	print("player hit: " + str(value))
+	redDiamonds -= 1
+	if(redDiamonds <= 0):
+		get_tree().change_scene_to_file("res://Levels/DeadLevel.tscn")
+	else:
+		playerHit.emit()
 	
 func debugShowValue():
 	print("RED DIAMONDS: " + str(redDiamonds) + " Gold: " + str(goldCoins))
@@ -23,4 +28,3 @@ func addColdCoin():
 
 func removeColdCoin():
 	goldCoins -= 1
-	

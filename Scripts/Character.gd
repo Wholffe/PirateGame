@@ -13,7 +13,20 @@ var hasSword = false
 
 var isAttacking = false
 var toggleAttack = false
+var recieveDamage = false
 
+func _ready():
+	Global.playerHit.connect(Callable(self, "playerHit"))
+
+func playerHit():
+	recieveDamage = true
+	if(hasSword):
+		$AnimatedSprite2D.play("hit_hs")
+	else:
+		$AnimatedSprite2D.play("hit_ns")
+	await  get_tree().create_timer(0.5).timeout
+	recieveDamage = false
+	
 func checkAttack():
 	if Input.is_action_just_pressed("ui_attack"):
 		isAttacking = true
@@ -37,7 +50,7 @@ func _physics_process(delta):
 	if(hasSword):
 		swordExtra = "_hs"
 	# Add the gravity.
-	if(isAttacking == false):
+	if(!isAttacking and !recieveDamage):
 		
 		if not is_on_floor():
 			velocity.y += gravity * delta
@@ -72,7 +85,7 @@ func _physics_process(delta):
 		if(hasSword):
 			checkAttack()
 
-	move_and_slide()
+		move_and_slide()
 
 
 func _on_animated_sprite_2d_animation_finished():
