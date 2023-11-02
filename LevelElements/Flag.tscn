@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://dymkns84l37mf"]
+
+[ext_resource type="Texture2D" uid="uid://bhbhfmupcacpo" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 01.png" id="1_rvjmu"]
+[ext_resource type="Texture2D" uid="uid://d2vh5fpow56ht" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 02.png" id="2_xj2h0"]
+[ext_resource type="Texture2D" uid="uid://baala58ikylfb" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 03.png" id="3_fre8j"]
+[ext_resource type="Texture2D" uid="uid://cwgcbouojahhf" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 04.png" id="4_ram6j"]
+[ext_resource type="Texture2D" uid="uid://c8agsxs7sgg8h" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 05.png" id="5_ryn17"]
+[ext_resource type="Texture2D" uid="uid://d0fvs16ddjnbi" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 06.png" id="6_5ose0"]
+[ext_resource type="Texture2D" uid="uid://dbp2dwyekycdv" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 07.png" id="7_a8huv"]
+[ext_resource type="Texture2D" uid="uid://dwhtjgqqp1qph" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 08.png" id="8_64hgw"]
+[ext_resource type="Texture2D" uid="uid://47ccv3kbmyo0" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 09.png" id="9_h6d77"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kkmwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rvjmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xj2h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fre8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ram6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ryn17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5ose0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a8huv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_64hgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h6d77")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Flag" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kkmwr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.774298

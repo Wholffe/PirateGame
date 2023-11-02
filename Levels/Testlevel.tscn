@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_jke2r"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="2_gv1kx"]
 [ext_resource type="PackedScene" uid="uid://bnh1oe1jg27xn" path="res://Actors/Sword.tscn" id="3_x3bts"]
-[ext_resource type="PackedScene" uid="uid://cn23d2yrlu0lv" path="res://Actors/Barrel.tscn" id="4_hu26x"]
 [ext_resource type="PackedScene" uid="uid://dcwj3kp088jm8" path="res://Actors/RedDiamond.tscn" id="5_8m7bg"]
+[ext_resource type="PackedScene" uid="uid://cs224mt6i3muc" path="res://LevelElements/BackPalmTreeLeft.tscn" id="6_kognl"]
 [ext_resource type="PackedScene" uid="uid://crcmvce2188w2" path="res://Actors/ColdCoin.tscn" id="6_vl38q"]
-[ext_resource type="PackedScene" uid="uid://ceajkjnljaw3c" path="res://Actors/Shooter_Cannon.tscn" id="7_lh3n1"]
-[ext_resource type="PackedScene" uid="uid://d22j444pt1nbr" path="res://Actors/Shooter_Totem1.tscn" id="8_vo7xm"]
-[ext_resource type="PackedScene" uid="uid://bahewtvkf4cg0" path="res://Actors/Shooter_Totem2.tscn" id="9_im0tt"]
-[ext_resource type="PackedScene" uid="uid://bp6r6k5sqfyjq" path="res://Actors/Shooter_Totem3.tscn" id="10_jjw04"]
-[ext_resource type="PackedScene" uid="uid://da8mfbxj6iq80" path="res://Actors/Enemy_Crabby.tscn" id="11_fin26"]
-[ext_resource type="PackedScene" uid="uid://d4ld1sipem38k" path="res://Actors/Enemy_PinkStar.tscn" id="12_cpd4l"]
+[ext_resource type="PackedScene" uid="uid://c4ap61r5yl1sw" path="res://LevelElements/BackPalmTreeRegular.tscn" id="7_835i5"]
+[ext_resource type="PackedScene" uid="uid://d2qjdir7hu1xp" path="res://LevelElements/BackPalmTreeRight.tscn" id="8_maap8"]
+[ext_resource type="PackedScene" uid="uid://tam8tci10tx" path="res://LevelElements/FrontPalmTree.tscn" id="9_d5dut"]
+[ext_resource type="PackedScene" uid="uid://dtstt7grinfoi" path="res://LevelElements/ShipHelm.tscn" id="10_uwdns"]
+[ext_resource type="PackedScene" uid="uid://dymkns84l37mf" path="res://LevelElements/Flag.tscn" id="11_q7rf1"]
+[ext_resource type="PackedScene" uid="uid://dcnajv55dha2l" path="res://Actors/Spikes.tscn" id="12_mcuut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_jke2r")
@@ -777,14 +777,7 @@ sources/0 = SubResource("TileSetAtlasSource_5721y")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lkiqw")
 format = 2
-layer_0/tile_data = PackedInt32Array(-38, 0, 0, -37, 65536, 0, -36, 131072, 0, -35, 196608, 0, -34, 262144, 0, -33, 327680, 0, -32, 0, 0, -31, 65536, 0, -30, 131072, 0, -29, 524288, 9, -28, 589824, 9, -27, 327680, 0, -26, 0, 0, -25, 65536, 0, -24, 131072, 0, -23, 196608, 0, -22, 262144, 0, -21, 327680, 0, -20, 0, 0, -19, 65536, 0, -18, 0, 0, -17, 65536, 0, -16, 131072, 0, -15, 196608, 0, -65490, 262144, 0, -65489, 327680, 0, -65488, 131072, 0, -65487, 196608, 0, -65486, 262144, 0, -65485, 524288, 9, -14, 262144, 0, -13, 327680, 0, -12, 0, 0, -11, 65536, 0, -10, 131072, 0, -9, 196608, 0, -8, 262144, 0, -7, 327680, 0, -6, 0, 0, -5, 65536, 0, -4, 131072, 0, -3, 196608, 0, -2, 262144, 0, -1, 327680, 0, -65536, 0, 0, -65535, 65536, 0, -65534, 131072, 0, -65533, 196608, 0, -65532, 262144, 0, -65531, 327680, 0, -65530, 0, 0, -65529, 65536, 0, -65528, 131072, 0, -65527, 196608, 0, -65526, 262144, 0, -65525, 327680, 0, -65524, 0, 0, -65523, 65536, 0, -65522, 131072, 0, -65521, 196608, 0, -65520, 262144, 0, -65519, 327680, 0, -65518, 0, 0, -65517, 65536, 0, -65516, 131072, 0, -65515, 196608, 0, -65514, 262144, 0, -65513, 327680, 0, -65512, 0, 0, -65511, 65536, 0, -65510, 524288, 9, -65509, 589824, 9, -65508, 262144, 0, -65507, 327680, 0, -65506, 0, 0, -65505, 65536, 0, -65504, 131072, 0, -65503, 196608, 0, -65502, 262144, 0, -65501, 327680, 0, -65500, 0, 0, -65499, 65536, 0, -65498, 131072, 0, -65497, 196608, 0, -65496, 262144, 0, -65495, 327680, 0, -65494, 0, 0, -65493, 65536, 0, -65492, 131072, 0, -65491, 196608, 0, -131021, 524288, 8, -131020, 589824, 8, -65484, 589824, 9, -131046, 524288, 8, -131045, 589824, 8, -65565, 524288, 8, -65564, 589824, 8, -196639, 524288, 8, -131103, 524288, 9, -196638, 589824, 8, -131102, 589824, 9, -327713, 524288, 8, -262177, 524288, 9, -327712, 589824, 8, -262176, 589824, 9)
-
-[node name="Barrel" parent="." instance=ExtResource("4_hu26x")]
-position = Vector2(279, -28)
-hp = 1
-
-[node name="Character" parent="." instance=ExtResource("2_gv1kx")]
-position = Vector2(364, -27)
+layer_0/tile_data = PackedInt32Array(-38, 0, 0, -37, 65536, 0, -36, 131072, 0, -35, 196608, 0, -34, 262144, 0, -33, 327680, 0, -32, 0, 0, -31, 65536, 0, -30, 131072, 0, -29, 524288, 9, -28, 589824, 9, -27, 327680, 0, -26, 0, 0, -25, 65536, 0, -24, 131072, 0, -23, 196608, 0, -22, 262144, 0, -21, 327680, 0, -20, 0, 0, -19, 65536, 0, -18, 0, 0, -17, 65536, 0, -16, 131072, 0, -15, 196608, 0, -65490, 262144, 0, -65489, 327680, 0, -65488, 131072, 0, -65487, 196608, 0, -65486, 262144, 0, -65485, 524288, 9, -14, 262144, 0, -13, 327680, 0, -12, 0, 0, -11, 65536, 0, -10, 131072, 0, -9, 196608, 0, -8, 262144, 0, -7, 327680, 0, -6, 0, 0, -5, 65536, 0, -4, 131072, 0, -3, 196608, 0, -2, 262144, 0, -1, 327680, 0, -65536, 0, 0, -65535, 65536, 0, -65534, 131072, 0, -65533, 196608, 0, -65532, 262144, 0, -65531, 327680, 0, -65530, 0, 0, -65529, 65536, 0, -65528, 131072, 0, -65527, 196608, 0, -65526, 262144, 0, -65525, 327680, 0, -65524, 0, 0, -65523, 65536, 0, -65522, 131072, 0, -65521, 196608, 0, -65520, 262144, 0, -65519, 327680, 0, -65518, 0, 0, -65517, 65536, 0, -65516, 131072, 0, -65515, 196608, 0, -65514, 262144, 0, -65513, 327680, 0, -65512, 0, 0, -65511, 65536, 0, -65510, 524288, 9, -65509, 589824, 9, -65508, 262144, 0, -65507, 327680, 0, -65506, 0, 0, -65505, 65536, 0, -65504, 131072, 0, -65503, 196608, 0, -65502, 262144, 0, -65501, 327680, 0, -65500, 0, 0, -65499, 65536, 0, -65498, 131072, 0, -65497, 196608, 0, -65496, 262144, 0, -65495, 327680, 0, -65494, 0, 0, -65493, 65536, 0, -65492, 131072, 0, -65491, 196608, 0, -131021, 524288, 8, -131020, 589824, 8, -65484, 589824, 9, -131046, 524288, 8, -131045, 589824, 8, -65565, 524288, 8, -65564, 589824, 8, -196639, 524288, 8, -131103, 524288, 9, -196638, 589824, 8, -131102, 589824, 9, -327713, 524288, 8, -262177, 524288, 9, -327712, 589824, 8, -262176, 589824, 9, -327648, 524288, 8, -262112, 524288, 9, -327647, 589824, 8, -262111, 589824, 9)
 
 [node name="Sword" parent="." instance=ExtResource("3_x3bts")]
 position = Vector2(431, -42)
@@ -795,34 +788,50 @@ position = Vector2(-287, -30)
 [node name="ColdCoin" parent="." instance=ExtResource("6_vl38q")]
 position = Vector2(-223, -30)
 
-[node name="Shooter_Cannon" parent="." instance=ExtResource("7_lh3n1")]
-position = Vector2(318, -28)
-lookLeft = false
-damageValue = 5
-range = 150
+[node name="BackPalmTreeLeft" parent="." instance=ExtResource("6_kognl")]
+position = Vector2(178, -43)
 
-[node name="Shooter_Totem1" parent="." instance=ExtResource("8_vo7xm")]
-position = Vector2(211, -23)
-projectileType = 1
-showFireEffect = false
+[node name="BackPalmTreeRegular" parent="." instance=ExtResource("7_835i5")]
+position = Vector2(202, -47)
 
-[node name="Shooter_Totem2" parent="." instance=ExtResource("9_im0tt")]
-position = Vector2(207, -45)
-pSpeed = 3
-projectileType = 1
+[node name="BackPalmTreeLeft2" parent="." instance=ExtResource("8_maap8")]
+position = Vector2(270, -42)
 
-[node name="Shooter_Totem3" parent="." instance=ExtResource("10_jjw04")]
-position = Vector2(204, -67)
-pSpeed = 10
-range = 200
-projectileType = 1
+[node name="Character" parent="." instance=ExtResource("2_gv1kx")]
+position = Vector2(364, -27)
 
-[node name="Enemy_Crabby" parent="." instance=ExtResource("11_fin26")]
-position = Vector2(569, -28)
-enemySpeed = 200.0
+[node name="FrontPalmTree" parent="." instance=ExtResource("9_d5dut")]
+position = Vector2(339, -31)
 
-[node name="Enemy_PinkStar" parent="." instance=ExtResource("12_cpd4l")]
-position = Vector2(709, -27)
-enemySpeed = 75.0
-enemyHP = 2
-enemyDamage = 2
+[node name="FrontPalmTree2" parent="." instance=ExtResource("9_d5dut")]
+position = Vector2(83, -31)
+
+[node name="ShipHelm" parent="." instance=ExtResource("10_uwdns")]
+position = Vector2(229, -30)
+
+[node name="Flag" parent="." instance=ExtResource("11_q7rf1")]
+position = Vector2(147, -61)
+
+[node name="Spikes" parent="." instance=ExtResource("12_mcuut")]
+position = Vector2(474, -31)
+spikeDamage = 3
+
+[node name="Spikes2" parent="." instance=ExtResource("12_mcuut")]
+position = Vector2(506, -31)
+spikeDamage = 3
+
+[node name="Spikes3" parent="." instance=ExtResource("12_mcuut")]
+position = Vector2(538, -31)
+spikeDamage = 3
+
+[node name="Spikes4" parent="." instance=ExtResource("12_mcuut")]
+position = Vector2(570, -31)
+spikeDamage = 3
+
+[node name="Spikes5" parent="." instance=ExtResource("12_mcuut")]
+position = Vector2(602, -31)
+spikeDamage = 3
+
+[node name="Spikes6" parent="." instance=ExtResource("12_mcuut")]
+position = Vector2(634, -31)
+spikeDamage = 3
