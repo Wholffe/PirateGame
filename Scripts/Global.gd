@@ -4,6 +4,7 @@ var redDiamonds = 0
 var goldCoins = 0
 
 enum projectileTypes {CANNON, TOTEM}
+enum Level {StartMenu, DeadLevel, WinnerScreen, Level1, Level2}
 
 func playerDamage(value):
 	print("player hit: " + str(value))
