@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cngm46nqj67hg"]
+[gd_scene load_steps=17 format=3 uid="uid://cngm46nqj67hg"]
 
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_jke2r"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="2_gv1kx"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dtstt7grinfoi" path="res://LevelElements/ShipHelm.tscn" id="10_uwdns"]
 [ext_resource type="PackedScene" uid="uid://dymkns84l37mf" path="res://LevelElements/Flag.tscn" id="11_q7rf1"]
 [ext_resource type="PackedScene" uid="uid://dcnajv55dha2l" path="res://Actors/Spikes.tscn" id="12_mcuut"]
+[ext_resource type="PackedScene" uid="uid://dvb4ofm6dklvd" path="res://Actors/LevelTransition.tscn" id="13_y5y6b"]
+[ext_resource type="PackedScene" uid="uid://b0dt8a22yxws3" path="res://Actors/DeadZone.tscn" id="14_2ytbh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_jke2r")
@@ -835,3 +837,11 @@ spikeDamage = 3
 [node name="Spikes6" parent="." instance=ExtResource("12_mcuut")]
 position = Vector2(634, -31)
 spikeDamage = 3
+
+[node name="LevelTransition" parent="." instance=ExtResource("13_y5y6b")]
+position = Vector2(746, -33)
+targetLevel = "DeadLevel"
+
+[node name="DeadZone" parent="." instance=ExtResource("14_2ytbh")]
+position = Vector2(264, 466)
+scale = Vector2(250, 2.137)
