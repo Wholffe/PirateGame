@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d0y0diys2yeyv" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/5.png" id="6_5j7yp"]
 [ext_resource type="Texture2D" uid="uid://dn7388c502rsh" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/6.png" id="7_h86w2"]
 [ext_resource type="Texture2D" uid="uid://t5p63rtpaoqn" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Idle/1.png" id="8_lvx0j"]
-[ext_resource type="AudioStream" uid="uid://kpdcdhlc10yg" path="res://Sound/Vine-Boom-Sound-Effect.wav" id="9_b4koo"]
+[ext_resource type="AudioStream" uid="uid://cog2kp7t6ptqy" path="res://Sound/canon.wav" id="9_252kn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rmpsn"]
 animations = [{
@@ -52,6 +52,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="shootSound" type="AudioStreamPlayer2D" parent="." index="2"]
-stream = ExtResource("9_b4koo")
+stream = ExtResource("9_252kn")
 max_distance = 500.0
 attenuation = 1.7411

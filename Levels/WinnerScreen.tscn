@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c70k0677nbukg"]
+[gd_scene load_steps=11 format=3 uid="uid://c70k0677nbukg"]
 
 [ext_resource type="Script" path="res://Scripts/WinnerScreen.gd" id="1_dcyts"]
 [ext_resource type="Texture2D" uid="uid://5oi5k5no0gvm" path="res://Assets/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="2_cr8kw"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="4_q33r3"]
 [ext_resource type="Texture2D" uid="uid://bwngmrxbyhncf" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="5_04opl"]
 [ext_resource type="Texture2D" uid="uid://dhgewraihbp4i" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/01.png" id="6_mj000"]
+[ext_resource type="AudioStream" uid="uid://l6cxms46r7w" path="res://Sound/winning.wav" id="7_g7xi6"]
+[ext_resource type="PackedScene" uid="uid://b0dt8a22yxws3" path="res://Actors/DeadZone.tscn" id="7_gs3ei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yy8af"]
 texture = ExtResource("2_cr8kw")
@@ -1392,3 +1394,12 @@ texture = ExtResource("5_04opl")
 [node name="RedDiamondSprite" type="Sprite2D" parent="."]
 position = Vector2(803, -185)
 texture = ExtResource("6_mj000")
+
+[node name="DeadZone" parent="." instance=ExtResource("7_gs3ei")]
+position = Vector2(722, 108)
+scale = Vector2(87.344, 2.56017)
+
+[node name="winning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_g7xi6")
+volume_db = -30.0
+autoplay = true

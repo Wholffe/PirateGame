@@ -20,6 +20,20 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_sa7su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iayo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rdpif")
+}],
+"loop": true,
+"name": &"destroy_wood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_h5ka4")
 }, {
 "duration": 1.0,
@@ -46,20 +60,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_sa7su")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_iayo7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_rdpif")
-}],
-"loop": true,
-"name": &"explosion_wood",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("9_ouf22")
 }],
 "loop": true,
@@ -83,7 +83,7 @@ script = ExtResource("1_2tjj6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hde5d")
-animation = &"idle"
+animation = &"destroy_wood"
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -98,8 +98,7 @@ attenuation = 2.07053
 
 [node name="woodDestroy" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_tt6t1")
-volume_db = -30.0
-max_distance = 50.0
-attenuation = 2.92817
+volume_db = -45.0
+max_distance = 200.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

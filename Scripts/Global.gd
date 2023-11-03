@@ -1,6 +1,6 @@
 extends Node
 
-var redDiamonds = 2
+var redDiamonds = 1
 var goldCoins = 0
 
 enum projectileTypes {CANNON, TOTEM}

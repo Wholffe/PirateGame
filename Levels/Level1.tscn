@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://ceajkjnljaw3c" path="res://Actors/Shooter_Cannon.tscn" id="5_d1q65"]
 [ext_resource type="PackedScene" uid="uid://crcmvce2188w2" path="res://Actors/ColdCoin.tscn" id="7_htwkl"]
 [ext_resource type="PackedScene" uid="uid://b0dt8a22yxws3" path="res://Actors/DeadZone.tscn" id="7_nut0d"]
+[ext_resource type="PackedScene" uid="uid://dcwj3kp088jm8" path="res://Actors/RedDiamond.tscn" id="8_aamyo"]
 [ext_resource type="Texture2D" uid="uid://wgrwcoghvmjg" path="res://Assets/Palm Tree Island/Sprites/Background/BG Image.png" id="8_rgj7o"]
 [ext_resource type="Texture2D" uid="uid://c8b25x67rjrfc" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="9_x0fnp"]
 [ext_resource type="Texture2D" uid="uid://yv6yq7hbfj3l" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="10_axcy2"]
 [ext_resource type="Texture2D" uid="uid://cj7e4ognklm56" path="res://Assets/Palm Tree Island/Sprites/Background/Big Clouds.png" id="11_t8ru5"]
 [ext_resource type="Texture2D" uid="uid://drkytg0ybwj1r" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="12_yw5lf"]
 [ext_resource type="AudioStream" uid="uid://bomnydid528ur" path="res://Sound/coastwind.wav" id="13_i3url"]
-[ext_resource type="PackedScene" uid="uid://d22j444pt1nbr" path="res://Actors/Shooter_Totem1.tscn" id="14_bjpxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("2_l5258")
@@ -800,7 +800,10 @@ position = Vector2(785, 190)
 scale = Vector2(200, 1)
 
 [node name="ColdCoin" parent="." instance=ExtResource("7_htwkl")]
-position = Vector2(452, -149)
+position = Vector2(450, -149)
+
+[node name="RedDiamond" parent="." instance=ExtResource("8_aamyo")]
+position = Vector2(677, 25)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -874,8 +877,3 @@ texture = ExtResource("9_x0fnp")
 stream = ExtResource("13_i3url")
 volume_db = -30.0
 autoplay = true
-
-[node name="Shooter_Totem1" parent="." instance=ExtResource("14_bjpxu")]
-position = Vector2(658, -146)
-range = 50
-projectileType = 1

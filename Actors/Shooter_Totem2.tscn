@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bahewtvkf4cg0"]
+[gd_scene load_steps=11 format=3 uid="uid://bahewtvkf4cg0"]
 
 [ext_resource type="PackedScene" uid="uid://by26g6kqdgxy" path="res://Actors/Shooter.tscn" id="1_si68a"]
 [ext_resource type="Texture2D" uid="uid://5lkg17fwv53d" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/1.png" id="2_r32yr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cv3g0f30afwcb" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/5.png" id="6_fdsgw"]
 [ext_resource type="Texture2D" uid="uid://ce5a6pgeakr6n" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/6.png" id="7_1wvt1"]
 [ext_resource type="Texture2D" uid="uid://bw275ouqbobnk" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Idle 2/1.png" id="8_m4nes"]
+[ext_resource type="AudioStream" uid="uid://v3wjgm0lwwea" path="res://Sound/totemshoot.wav" id="9_krp3a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rmpsn"]
 animations = [{
@@ -52,3 +53,8 @@ animation = &"fire"
 autoplay = "idle"
 frame = 5
 frame_progress = 1.0
+
+[node name="shootSound" type="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("9_krp3a")
+volume_db = -20.0
+max_distance = 300.0

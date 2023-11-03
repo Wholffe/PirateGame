@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://br516nkmyg078"]
+[gd_scene load_steps=3 format=3 uid="uid://br516nkmyg078"]
 
 [ext_resource type="Script" path="res://Scripts/DeadLevel.gd" id="1_vomhv"]
+[ext_resource type="AudioStream" uid="uid://rlaj1o5laqoy" path="res://Sound/failmusic.wav" id="2_vrd3k"]
 
 [node name="DeadLevel" type="Node2D"]
 script = ExtResource("1_vomhv")
@@ -11,5 +12,10 @@ offset_top = 117.0
 offset_right = 401.0
 offset_bottom = 205.0
 text = "Back to Start Menu"
+
+[node name="failMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vrd3k")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

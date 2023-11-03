@@ -13,4 +13,7 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("Player")):
 		Global.addRedDiamonds()
+		$AnimatedSprite2D.visible = false
+		$collectRed.play()
+		await get_tree().create_timer(4.69).timeout
 		queue_free()

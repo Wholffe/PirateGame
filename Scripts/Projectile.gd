@@ -41,10 +41,11 @@ func explode():
 		$AnimatedSprite2D.play("explosion")
 		$canonExplosion.play()
 	else:
-		$AnimatedSprite2D.play("explosion_wood")
+		$AnimatedSprite2D.play("destroy_wood")
 		$woodDestroy.play()
 	await get_tree().create_timer(0.3).timeout
 	$AnimatedSprite2D.visible = false
+	$Area2D/CollisionShape2D.disabled = true
 	await get_tree().create_timer(3).timeout
 	queue_free()
 

@@ -24,6 +24,7 @@ func playerHit():
 		$AnimatedSprite2D.play("hit_hs")
 	else:
 		$AnimatedSprite2D.play("hit_ns")
+	$playerHit.play()
 	await  get_tree().create_timer(0.5).timeout
 	recieveDamage = false
 	
@@ -38,7 +39,7 @@ func checkAttack():
 			1: animSprite.play("attack1")
 			2: animSprite.play("attack2")
 			3: animSprite.play("attack3")
-			
+		$swordattack.play()
 		if(animSprite.flip_h):
 			$AttackArea/CollisionShape2D.position.x *= -1
 			toggleAttack = true

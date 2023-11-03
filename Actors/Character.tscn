@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://hkq4metxa1pf"]
+[gd_scene load_steps=55 format=3 uid="uid://hkq4metxa1pf"]
 
 [ext_resource type="Texture2D" uid="uid://ci3os3oy2q3ne" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_qwcmf"]
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_uqn17"]
@@ -49,6 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://dlnlgkmmy3fe7" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 05.png" id="24_82bcr"]
 [ext_resource type="Texture2D" uid="uid://eumlbfv6sk42" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 06.png" id="25_0vxrd"]
 [ext_resource type="PackedScene" uid="uid://cxqa3o5tkteos" path="res://GUI/MainHUD.tscn" id="41_xonxc"]
+[ext_resource type="AudioStream" uid="uid://qq7scr4rsrd7" path="res://Sound/swordattack.wav" id="50_s37wf"]
+[ext_resource type="AudioStream" uid="uid://6wrtsy8wo2mj" path="res://Sound/playerhit.wav" id="51_h4rpd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c1q2d"]
 height = 24.0
@@ -286,5 +288,13 @@ shape = SubResource("RectangleShape2D_efbj4")
 disabled = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("41_xonxc")]
+
+[node name="swordattack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("50_s37wf")
+volume_db = -30.0
+
+[node name="playerHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("51_h4rpd")
+volume_db = -20.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
