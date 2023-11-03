@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bryxw6cnjjkm4"]
+[gd_scene load_steps=17 format=3 uid="uid://bryxw6cnjjkm4"]
 
 [ext_resource type="Script" path="res://Scripts/DeadLevel.gd" id="1_jclrs"]
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_l5258"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://yv6yq7hbfj3l" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="10_axcy2"]
 [ext_resource type="Texture2D" uid="uid://cj7e4ognklm56" path="res://Assets/Palm Tree Island/Sprites/Background/Big Clouds.png" id="11_t8ru5"]
 [ext_resource type="Texture2D" uid="uid://drkytg0ybwj1r" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="12_yw5lf"]
+[ext_resource type="AudioStream" uid="uid://bomnydid528ur" path="res://Sound/coastwind.wav" id="13_i3url"]
+[ext_resource type="PackedScene" uid="uid://d22j444pt1nbr" path="res://Actors/Shooter_Totem1.tscn" id="14_bjpxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("2_l5258")
@@ -788,7 +790,7 @@ targetLevel = "Level2"
 requiredGoldCoins = 1
 
 [node name="Character" parent="." instance=ExtResource("4_yi0us")]
-position = Vector2(471, 23)
+position = Vector2(501, 24)
 
 [node name="Shooter_Cannon" parent="." instance=ExtResource("5_d1q65")]
 position = Vector2(978, -86)
@@ -867,3 +869,13 @@ texture = ExtResource("9_x0fnp")
 position = Vector2(-118, -127)
 scale = Vector2(2.7949, 2.77404)
 texture = ExtResource("9_x0fnp")
+
+[node name="coastwind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_i3url")
+volume_db = -30.0
+autoplay = true
+
+[node name="Shooter_Totem1" parent="." instance=ExtResource("14_bjpxu")]
+position = Vector2(658, -146)
+range = 50
+projectileType = 1

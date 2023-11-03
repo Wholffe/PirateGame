@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://db2o8g6j0eblo"]
+[gd_scene load_steps=18 format=3 uid="uid://db2o8g6j0eblo"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_2tjj6"]
 [ext_resource type="Texture2D" uid="uid://dv7bnhblexkpr" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="2_h5ka4"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://chesclwy8vjhl" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/2.png" id="10_iayo7"]
 [ext_resource type="Texture2D" uid="uid://dgo8sbkcevnhk" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/3.png" id="11_rdpif"]
 [ext_resource type="Texture2D" uid="uid://dij7tkbbtx5xp" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="13_5o4sh"]
+[ext_resource type="AudioStream" uid="uid://dtlgf0mas1qd7" path="res://Sound/canonExplosion.wav" id="14_kwsfi"]
+[ext_resource type="AudioStream" uid="uid://erwwpqa5fp8e" path="res://Sound/wooddestroy.wav" id="15_tt6t1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hde5d"]
 animations = [{
@@ -88,5 +90,16 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_w7fms")
+
+[node name="canonExplosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_kwsfi")
+max_distance = 500.0
+attenuation = 2.07053
+
+[node name="woodDestroy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_tt6t1")
+volume_db = -30.0
+max_distance = 50.0
+attenuation = 2.92817
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

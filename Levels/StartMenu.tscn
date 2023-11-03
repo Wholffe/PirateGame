@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwiwbxbsxhmqb"]
+[gd_scene load_steps=12 format=3 uid="uid://dwiwbxbsxhmqb"]
 
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_4575q"]
 [ext_resource type="Script" path="res://Scripts/StartMenu.gd" id="1_mya4i"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2qjdir7hu1xp" path="res://LevelElements/BackPalmTreeRight.tscn" id="5_hk02m"]
 [ext_resource type="PackedScene" uid="uid://c4ap61r5yl1sw" path="res://LevelElements/BackPalmTreeRegular.tscn" id="6_fv3kg"]
 [ext_resource type="PackedScene" uid="uid://ceajkjnljaw3c" path="res://Actors/Shooter_Cannon.tscn" id="7_opiuw"]
+[ext_resource type="AudioStream" uid="uid://dmf36b2l32flc" path="res://Sound/menumainsound.wav" id="9_bfuj4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("1_4575q")
@@ -808,6 +809,11 @@ offset_top = 130.0
 offset_right = 319.0
 offset_bottom = 161.0
 text = "Quit"
+
+[node name="menumainsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_bfuj4")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

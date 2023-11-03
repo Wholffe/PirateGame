@@ -1374,14 +1374,16 @@ offset_left = 747.0
 offset_top = -192.0
 offset_right = 787.0
 offset_bottom = -152.0
-scale = Vector2(0.4, 0.32)
+scale = Vector2(0.599995, 0.56)
+tab_size = 8
 
 [node name="collectedRedDiamonds" type="RichTextLabel" parent="."]
-offset_left = 814.0
-offset_top = -191.0
-offset_right = 854.0
-offset_bottom = -151.0
-scale = Vector2(0.4, 0.28)
+offset_left = 812.0
+offset_top = -193.0
+offset_right = 852.0
+offset_bottom = -153.0
+scale = Vector2(0.599995, 0.56)
+tab_size = 8
 
 [node name="ColdCoinSprite" type="Sprite2D" parent="."]
 position = Vector2(738, -186)

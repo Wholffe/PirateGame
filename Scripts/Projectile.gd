@@ -39,9 +39,13 @@ func _process(delta):
 func explode():
 	if(projectiletype == 0):
 		$AnimatedSprite2D.play("explosion")
+		$canonExplosion.play()
 	else:
 		$AnimatedSprite2D.play("explosion_wood")
+		$woodDestroy.play()
 	await get_tree().create_timer(0.3).timeout
+	$AnimatedSprite2D.visible = false
+	await get_tree().create_timer(3).timeout
 	queue_free()
 
 # HIT Player

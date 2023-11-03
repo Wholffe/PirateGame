@@ -33,6 +33,8 @@ func fire():
 		$FireEffect.play("fireeffect")
 		
 	spawnProjectile()
+	if($shootSound):
+		$shootSound.play()
 	await  get_tree().create_timer(0.3).timeout
 	$FireEffect.visible = false
 	$AnimatedSprite2D.play("idle")
