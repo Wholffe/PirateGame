@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c70k0677nbukg"]
+[gd_scene load_steps=9 format=3 uid="uid://c70k0677nbukg"]
 
-[ext_resource type="Script" path="res://Scripts/DeadLevel.gd" id="1_02uht"]
+[ext_resource type="Script" path="res://Scripts/WinnerScreen.gd" id="1_dcyts"]
 [ext_resource type="Texture2D" uid="uid://5oi5k5no0gvm" path="res://Assets/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="2_cr8kw"]
 [ext_resource type="PackedScene" uid="uid://dvb4ofm6dklvd" path="res://Actors/LevelTransition.tscn" id="3_sdkhv"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="4_q33r3"]
+[ext_resource type="Texture2D" uid="uid://bwngmrxbyhncf" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="5_04opl"]
+[ext_resource type="Texture2D" uid="uid://dhgewraihbp4i" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/01.png" id="6_mj000"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yy8af"]
 texture = ExtResource("2_cr8kw")
@@ -1330,7 +1332,7 @@ sources/0 = SubResource("TileSetAtlasSource_yy8af")
 
 [node name="WinnerScreen" type="Node2D"]
 position = Vector2(-342, 162)
-script = ExtResource("1_02uht")
+script = ExtResource("1_dcyts")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1mpa7")
@@ -1359,3 +1361,32 @@ targetLevel = "StartMenu"
 [node name="LevelTransition5" parent="." instance=ExtResource("3_sdkhv")]
 position = Vector2(621, -96)
 targetLevel = "StartMenu"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 698.0
+offset_top = -227.0
+offset_right = 856.0
+offset_bottom = -195.0
+text = "Thanks for playing!"
+
+[node name="collectedGoldCoins" type="RichTextLabel" parent="."]
+offset_left = 747.0
+offset_top = -192.0
+offset_right = 787.0
+offset_bottom = -152.0
+scale = Vector2(0.4, 0.32)
+
+[node name="collectedRedDiamonds" type="RichTextLabel" parent="."]
+offset_left = 814.0
+offset_top = -191.0
+offset_right = 854.0
+offset_bottom = -151.0
+scale = Vector2(0.4, 0.28)
+
+[node name="ColdCoinSprite" type="Sprite2D" parent="."]
+position = Vector2(738, -186)
+texture = ExtResource("5_04opl")
+
+[node name="RedDiamondSprite" type="Sprite2D" parent="."]
+position = Vector2(803, -185)
+texture = ExtResource("6_mj000")

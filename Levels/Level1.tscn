@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bryxw6cnjjkm4"]
+[gd_scene load_steps=15 format=3 uid="uid://bryxw6cnjjkm4"]
 
 [ext_resource type="Script" path="res://Scripts/DeadLevel.gd" id="1_jclrs"]
 [ext_resource type="Texture2D" uid="uid://b8tyr2hon1vqx" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_l5258"]
 [ext_resource type="PackedScene" uid="uid://dvb4ofm6dklvd" path="res://Actors/LevelTransition.tscn" id="3_nwhf5"]
 [ext_resource type="PackedScene" uid="uid://hkq4metxa1pf" path="res://Actors/Character.tscn" id="4_yi0us"]
 [ext_resource type="PackedScene" uid="uid://ceajkjnljaw3c" path="res://Actors/Shooter_Cannon.tscn" id="5_d1q65"]
-[ext_resource type="PackedScene" uid="uid://bnh1oe1jg27xn" path="res://Actors/Sword.tscn" id="6_yv3qf"]
+[ext_resource type="PackedScene" uid="uid://crcmvce2188w2" path="res://Actors/ColdCoin.tscn" id="7_htwkl"]
+[ext_resource type="PackedScene" uid="uid://b0dt8a22yxws3" path="res://Actors/DeadZone.tscn" id="7_nut0d"]
+[ext_resource type="Texture2D" uid="uid://wgrwcoghvmjg" path="res://Assets/Palm Tree Island/Sprites/Background/BG Image.png" id="8_rgj7o"]
+[ext_resource type="Texture2D" uid="uid://c8b25x67rjrfc" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="9_x0fnp"]
+[ext_resource type="Texture2D" uid="uid://yv6yq7hbfj3l" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="10_axcy2"]
+[ext_resource type="Texture2D" uid="uid://cj7e4ognklm56" path="res://Assets/Palm Tree Island/Sprites/Background/Big Clouds.png" id="11_t8ru5"]
+[ext_resource type="Texture2D" uid="uid://drkytg0ybwj1r" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="12_yw5lf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5721y"]
 texture = ExtResource("2_l5258")
@@ -771,19 +777,93 @@ position = Vector2(-342, 162)
 script = ExtResource("1_jclrs")
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(180, 54)
 tile_set = SubResource("TileSet_vlu4d")
 format = 2
-layer_0/tile_data = PackedInt32Array(-327659, 0, 8, -262123, 0, 9, -327658, 65536, 8, -262122, 65536, 9, -327657, 131072, 8, -262121, 131072, 9, -327656, 196608, 8, -262120, 196608, 9, -327655, 262144, 8, -262119, 262144, 9, -327654, 327680, 8, -262118, 327680, 9, -327653, 0, 8, -262117, 0, 9, -327652, 65536, 8, -262116, 65536, 9, -327651, 131072, 8, -262115, 131072, 9, -327650, 196608, 8, -262114, 196608, 9, -327649, 262144, 8, -262113, 262144, 9, -327648, 327680, 8, -262112, 327680, 9, -327647, 0, 8, -262111, 0, 9, -327646, 65536, 8, -262110, 65536, 9, -327645, 131072, 8, -262109, 131072, 9, -327644, 196608, 8, -262108, 196608, 9, -327643, 262144, 8, -262107, 262144, 9, -327642, 327680, 8, -262106, 327680, 9, -327641, 0, 8, -262105, 0, 9, -327640, 65536, 8, -262104, 65536, 9, -327639, 131072, 8, -262103, 131072, 9, -327638, 196608, 8, -262102, 196608, 9, -327637, 262144, 8, -262101, 262144, 9, -327636, 327680, 8, -262100, 327680, 9, -327635, 0, 8, -262099, 0, 9, -327634, 65536, 8, -262098, 65536, 9, -327633, 131072, 8, -262097, 131072, 9, -327632, 196608, 8, -262096, 196608, 9, -327631, 262144, 8, -262095, 262144, 9, -327630, 327680, 8, -262094, 327680, 9, -327629, 0, 8, -262093, 0, 9, -327628, 65536, 8, -262092, 65536, 9, -327627, 131072, 8, -262091, 131072, 9, -327626, 196608, 8, -262090, 196608, 9, -327625, 262144, 8, -262089, 262144, 9, -327624, 327680, 8, -262088, 327680, 9, -327623, 0, 8, -262087, 0, 9, -327622, 65536, 8, -262086, 65536, 9, -327621, 131072, 8, -262085, 131072, 9, -327620, 196608, 8, -262084, 196608, 9, -327619, 262144, 8, -262083, 262144, 9, -327618, 327680, 8, -262082, 327680, 9, -327617, 0, 8, -262081, 0, 9, -327616, 65536, 8, -262080, 65536, 9, -327615, 131072, 8, -262079, 131072, 9, -327614, 196608, 8, -262078, 196608, 9, -327613, 262144, 8, -262077, 262144, 9, -327612, 327680, 8, -262076, 327680, 9)
+layer_0/tile_data = PackedInt32Array(-65522, 0, 0, 14, 0, 1, 65550, 0, 2, 131086, 0, 3, 196622, 0, 4, 262158, 0, 5, -65521, 65536, 0, 15, 65536, 1, 65551, 65536, 2, 131087, 65536, 3, 196623, 65536, 4, 262159, 65536, 5, -65520, 131072, 0, 16, 131072, 1, 65552, 131072, 2, 131088, 131072, 3, 196624, 131072, 4, 262160, 131072, 5, -65519, 196608, 0, 17, 196608, 1, 65553, 196608, 2, 131089, 196608, 3, 196625, 196608, 4, 262161, 196608, 5, -65518, 262144, 0, 18, 262144, 1, 65554, 262144, 2, 131090, 262144, 3, 196626, 262144, 4, 262162, 262144, 5, -65517, 327680, 0, 19, 327680, 1, 65555, 327680, 2, 131091, 327680, 3, 196627, 327680, 4, 262163, 327680, 5, -65516, 0, 0, 20, 0, 1, 65556, 0, 2, 131092, 0, 3, 196628, 0, 4, 262164, 0, 5, -65515, 65536, 0, 21, 65536, 1, 65557, 65536, 2, 131093, 65536, 3, 196629, 65536, 4, 262165, 65536, 5, -65514, 131072, 0, 22, 131072, 1, 65558, 131072, 2, 131094, 131072, 3, 196630, 131072, 4, 262166, 131072, 5, -65513, 196608, 0, 23, 196608, 1, 65559, 196608, 2, 131095, 196608, 3, 196631, 196608, 4, 262167, 196608, 5, -65512, 262144, 0, 24, 262144, 1, 65560, 262144, 2, 131096, 262144, 3, 196632, 262144, 4, 262168, 262144, 5, -65511, 327680, 0, 25, 327680, 1, 65561, 327680, 2, 131097, 327680, 3, 196633, 327680, 4, 262169, 327680, 5, -65508, 0, 8, 28, 0, 9, -65507, 65536, 8, 29, 65536, 9, -65506, 131072, 8, 30, 131072, 9, -65505, 196608, 8, 31, 196608, 9, -65504, 262144, 8, 32, 262144, 9, -65503, 327680, 8, 33, 327680, 9, -262108, 524288, 1, -196572, 524288, 2, -262107, 589824, 1, -196571, 589824, 2, -327642, 524288, 1, -262106, 524288, 2, -327641, 589824, 1, -262105, 589824, 2, -393176, 524288, 1, -327640, 524288, 2, -393175, 589824, 1, -327639, 589824, 2, -327644, 524288, 0, -131036, 524288, 3, -65500, 524288, 4, 36, 524288, 5, -327643, 589824, 0, -131035, 589824, 3, -65499, 589824, 4, 37, 589824, 5, -393178, 524288, 0, -196570, 524288, 3, -131034, 524288, 4, -65498, 524288, 5, -393177, 589824, 0, -196569, 589824, 3, -131033, 589824, 4, -65497, 589824, 5, -458712, 524288, 0, -262104, 524288, 3, -196568, 524288, 4, -131032, 524288, 5, -458711, 589824, 0, -262103, 589824, 3, -196567, 589824, 4, -131031, 589824, 5, -655325, 524288, 8, -589789, 524288, 9, -655324, 589824, 8, -589788, 589824, 9, -786407, 0, 8, -720871, 0, 9, -786406, 65536, 8, -720870, 65536, 9, -786405, 131072, 8, -720869, 131072, 9, -786404, 196608, 8, -720868, 196608, 9, -786403, 262144, 8, -720867, 262144, 9, -786402, 327680, 8, -720866, 327680, 9, -786418, 0, 8, -720882, 0, 9, -786417, 65536, 8, -720881, 65536, 9, -786416, 131072, 8, -720880, 131072, 9, -786415, 196608, 8, -720879, 196608, 9, -786414, 262144, 8, -720878, 262144, 9, -786413, 327680, 8, -720877, 327680, 9, -524242, 0, 8, -458706, 0, 9, -524241, 65536, 8, -458705, 65536, 9, -524240, 131072, 8, -458704, 131072, 9, -524239, 196608, 8, -458703, 196608, 9, -524238, 262144, 8, -458702, 262144, 9, -524237, 327680, 8, -458701, 327680, 9, -524236, 0, 8, -458700, 0, 9, -524235, 65536, 8, -458699, 65536, 9, -524234, 131072, 8, -458698, 131072, 9, -524233, 196608, 8, -458697, 196608, 9, -524232, 262144, 8, -458696, 262144, 9, -524231, 327680, 8, -458695, 327680, 9, -524230, 0, 8, -458694, 0, 9, -524229, 65536, 8, -458693, 65536, 9, -524228, 131072, 8, -458692, 131072, 9, -524227, 196608, 8, -458691, 196608, 9, -524226, 262144, 8, -458690, 262144, 9, -524225, 327680, 8, -458689, 327680, 9)
 
 [node name="LevelTransition" parent="." instance=ExtResource("3_nwhf5")]
-position = Vector2(1067, -97)
+position = Vector2(1058, -90)
 targetLevel = "Level2"
+requiredGoldCoins = 1
 
 [node name="Character" parent="." instance=ExtResource("4_yi0us")]
-position = Vector2(367, -100)
+position = Vector2(471, 23)
 
 [node name="Shooter_Cannon" parent="." instance=ExtResource("5_d1q65")]
-position = Vector2(978, -92)
+position = Vector2(978, -86)
 
-[node name="Sword" parent="." instance=ExtResource("6_yv3qf")]
-position = Vector2(505, -90)
+[node name="DeadZone" parent="." instance=ExtResource("7_nut0d")]
+position = Vector2(785, 190)
+scale = Vector2(200, 1)
+
+[node name="ColdCoin" parent="." instance=ExtResource("7_htwkl")]
+position = Vector2(452, -149)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundImage" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BackgroundImage"]
+position = Vector2(334, 123)
+scale = Vector2(13.9609, 8.85967)
+texture = ExtResource("8_rgj7o")
+
+[node name="CloudLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-4, 32)
+scale = Vector2(0.84, 1)
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CloudLayer1"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/CloudLayer1"]
+position = Vector2(130, -168)
+scale = Vector2(1.86331, 2.40276)
+texture = ExtResource("9_x0fnp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/CloudLayer1"]
+position = Vector2(1031, -177)
+scale = Vector2(-2.71025, 1.7531)
+texture = ExtResource("10_axcy2")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/CloudLayer1"]
+position = Vector2(526, -168)
+scale = Vector2(-2.71025, 1.7531)
+texture = ExtResource("10_axcy2")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/CloudLayer1"]
+position = Vector2(-415, -170)
+scale = Vector2(-2.71025, 1.7531)
+texture = ExtResource("10_axcy2")
+
+[node name="BigClouds" type="Sprite2D" parent="ParallaxBackground/CloudLayer1"]
+position = Vector2(-122, -190)
+texture = ExtResource("11_t8ru5")
+
+[node name="CloudLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CloudLayer2"]
+position = Vector2(734, -168)
+texture = ExtResource("11_t8ru5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/CloudLayer2"]
+position = Vector2(1007, -148)
+scale = Vector2(2.37838, 2.625)
+texture = ExtResource("9_x0fnp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/CloudLayer2"]
+position = Vector2(294.757, -152.094)
+scale = Vector2(2.4749, 2.77404)
+texture = ExtResource("12_yw5lf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/CloudLayer2"]
+position = Vector2(474, -150)
+scale = Vector2(2.4749, 2.77404)
+texture = ExtResource("9_x0fnp")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/CloudLayer2"]
+position = Vector2(-118, -127)
+scale = Vector2(2.7949, 2.77404)
+texture = ExtResource("9_x0fnp")
