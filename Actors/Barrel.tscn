@@ -74,11 +74,9 @@ curve = SubResource("Curve_d3mi4")
 particle_flag_disable_z = true
 direction = Vector3(1, 1, 0)
 spread = 180.0
-gravity = Vector3(0, 2, 0)
 initial_velocity_min = 136.84
 initial_velocity_max = 252.63
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 2, 0)
 scale_curve = SubResource("CurveTexture_daxch")
 
 [node name="Barrel" type="Node2D"]
